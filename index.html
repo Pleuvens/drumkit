@@ -7,15 +7,42 @@
     <body>
         <img class="background" src="images/background.jpg"/>
         <div class="container">
-            <button name="boom" onclick="Play(this)">Boom</button>
-            <button name="clap" onclick="Play(this)">Clap</button>
-            <button name="hihat" onclick="Play(this)">Hi-Hat</button>
-            <button name="kick" onclick="Play(this)">Kick</button>
-            <button name="openhat" onclick="Play(this)">Open Hat</button>
-            <button name="ride" onclick="Play(this)">Ride</button>
-            <button name="snare" onclick="Play(this)">Snare</button>
-            <button name="tink" onclick="Play(this)">Tink</button>
-            <button name="tom" onclick="Play(this)">Tom</button>
+            <button name="boom" onclick="Play(this)">
+                <p>Press 'a'</p>
+                <p>Boom</p>
+            </button>
+            <button name="clap" onclick="Play(this)">
+                <p>Press 'z'</p>
+                <p>Clap</p>
+            </button>
+            <button name="hihat" onclick="Play(this)">
+                <p>Press 'e'</p>
+                <p>Hi-Hat</p>
+            </button>
+            <button name="kick" onclick="Play(this)">
+                <p>Press 'r'</p>
+                <p>Kick</p>
+            </button>
+            <button name="openhat" onclick="Play(this)">
+                <p>Press 't'</p>
+                <p>Open Hat</p>
+            </button>
+            <button name="ride" onclick="Play(this)">
+                <p>Press 'y'</p>
+                <p>Ride</p>
+            </button>
+            <button name="snare" onclick="Play(this)">
+                <p>Press 'u'</p>
+                <p>Snare</p>
+            </button>
+            <button name="tink" onclick="Play(this)">
+                <p>Press 'i'</p>
+                <p>Tink</p>
+            </button>
+            <button name="tom" onclick="Play(this)">
+                <p>Press 'o'</p>
+                <p>Tom</p>
+            </button>
         </div>
     </body>
 
@@ -73,6 +100,7 @@
         function Play(target) {
             let sound = target.getAttribute('name');
             let audio = new Audio(audios[sound]);
+            audio.currentTime = 0;
             audio.play();
             if (target.classList.contains('btn-animate')) {
                 target.classList.remove('btn-animate');
