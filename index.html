@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+
+    <body>
+        <div class="container">
+            <button data-sound="boom" onclick="Play(this)">Boom</button>
+            <button data-sound="clap" onclick="Play(this)">Clap</button>
+            <button data-sound="hihat" onclick="Play(this)">Hi-Hat</button>
+            <button data-sound="kick" onclick="Play(this)">Kick</button>
+            <button data-sound="openhat" onclick="Play(this)">Open Hat</button>
+            <button data-sound="ride" onclick="Play(this)">Ride</button>
+            <button data-sound="snare" onclick="Play(this)">Snare</button>
+            <button data-sound="tink" onclick="Play(this)">Tink</button>
+            <button data-sound="tom" onclick="Play(this)">Tom</button>
+        </div>
+    </body>
+
+    <script>
+        let audios = {
+            boom: "sounds/boom.wav",
+            clap: "sounds/clap.wav",
+            hihat: "sounds/hihat.wav",
+            kick: "sounds/kick.wav",
+            openhat: "sounds/openhat.wav",
+            ride: "sounds/ride.wav",
+            snare: "sounds/snare.wav",
+            tink: "sounds/tink.wav",
+            tom: "sounds/tom.wav"
+        }
+        function Play(target) {
+            let sound = target.getAttribute('data-sound');
+            let audio = new Audio(audios[sound]);
+            audio.play();
+        }
+    </script>
+</html>
